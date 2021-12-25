@@ -1,0 +1,61 @@
+<!--
+<div class="login-page">
+    <div class="form">
+      <div class="login">
+        <div class="login-header">
+          <h3>Admin Login</h3>
+          <p>Please enter your credentials to login.</p>
+        </div>
+      </div>
+      <form class="login-form">
+        <input type="text" placeholder="username" name="username"  [(ngModel)]="username"/>
+        <input type="password" placeholder="password" name="password" [(ngModel)]="password"/>
+        <button (click)="logIn()">login</button>
+     
+     
+      </form>
+    </div>
+  </div>
+<router-outlet></router-outlet>
+
+-->
+
+
+   
+
+    
+
+      <!--
+      <b>Username</b><input type="text" placeholder="Enter Username" name="username"
+      #username='ngModel' [(ngModel)]="username"  required ><br>
+      <div class="alert alert-danger" *ngIf="username.touched">
+          <div *ngIf="username.errors?.['required']">Enter Username</div>
+      </div>
+      
+      
+      <b>Password</b><input type="password" placeholder="Enter Password" 
+      name="password"  #password='ngModel' [(ngModel)]="password"  required ><br>
+      <div class="alert alert-danger" *ngIf="password.touched">
+          <div *ngIf="password.errors?.['required']">Enter Password</div>
+      </div>
+
+      -->
+      
+      <div class="login-page">
+        <div class="form">
+              <div class="login">
+            <div class="login-header">
+              <h3>Login</h3>
+            </div>
+          </div>
+          <form class="login-form">
+            <b>Username</b><input type="text" placeholder="Enter Username" name="username"  [(ngModel)]="username" />
+            <b>Password</b><input type="password" placeholder="Enter Password" name="password" [(ngModel)]="password"/>
+            <button (click)="logIn()">login</button>
+         
+   
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,141 @@
+<!-- <div class="d-flex flex-row bd-highlight mb-3">
+
+  <div class="form-froup row" style="width: 40%;">
+  
+      <label class="col-sm-4 col-form-label">Lead Name</label>
+      <div class="col-sm-12">
+          <input type="text" class="form-control" [(ngModel)]="Lname"
+          placeholder="Enter Name">
+      </div>
+  
+      <label class="col-sm-4 col-form-label">Lead Address</label>
+      <div class="col-sm-12">
+          <input type="text"  [(ngModel)]="Laddress">
+       
+      </div>
+  
+      <label class="col-sm-4 col-form-label">Phone</label>
+      <div class="col-sm-12">
+          <input type="text"  [(ngModel)]="Lphone">
+      </div>
+
+      <label class="col-sm-4 col-form-label">Email</label>
+      <div class="col-sm-12">
+          <input type="text"  [(ngModel)]="Lemail">
+      </div>
+
+      <label class="col-sm-4 col-form-label">Gender</label>
+      <div class="col-sm-12">
+          <input type="text"  [(ngModel)]="Lgender">
+      </div>
+
+      
+  
+  </div>
+  
+</div>
+  
+  
+  <button type="submit" (click)='addLead()' *ngIf="lead.Lid==0" class="btn btn-warning">
+      Add
+  </button>
+  
+  <button (click)="updateLead()" *ngIf="lead.Lid!=0" class="btn btn-warning">
+      Update
+  </button>
+ -->
+
+
+<form #lform="ngForm">
+
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" #name="ngModel" ngModel name="Name" required minlength="5">
+        <div class="alert alert-danger" *ngIf="name.invalid && name.touched">
+            <div *ngIf="name.errors?.['required']">Name is required</div>
+            <div *ngIf="name.errors?.['minlength']">5 letters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <input type="text" class="form-control" #adrr="ngModel" ngModel name="Address" required>
+        <div class="alert alert-danger" *ngIf="adrr.invalid && adrr.touched">
+            <div *ngIf="adrr.errors?.['required']">Name is required</div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="text" class="form-control" #mobile="ngModel" ngModel name="Mobile" required minlength="10">
+        <div class="alert alert-danger" *ngIf="mobile.invalid && mobile.touched">
+            <div *ngIf="mobile.errors?.['required']">Name is required</div>
+            <div *ngIf="mobile.errors?.['minlength']">10 letters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" #email="ngModel" ngModel name="Email" required
+            pattern="[a-zA-Z0-9]+@[a-z]+[.][a-z]+">
+        <div class="alert alert-danger" *ngIf="email.invalid && email.touched">
+
+            <div *ngIf="email.errors?.['required']">email is required</div>
+            <div *ngIf="email.errors?.['pattern']">pattern</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Gender</label>
+        <div class="form-control">
+            <label class="radio-inline">
+        <input type="radio"  value="male"  #gender="ngModel" ngModel name="gender">Male
+    </label>
+    <label class="radio-inline">
+        <input type="radio"  value="FeMale"  #gender="ngModel" ngModel name="gender">FeMale
+    </label>
+    </div>
+</div>
+
+<div class="form-group">
+<input type="submit" (click)="onSubmit(lform.value)" class="btn-success" value="Submit" [disabled]='lform.invalid'>
+</div>
+
+</form>
+
+
+
+
+
+
+<!--
+    <form>
+        <div class="form-group">
+          <label for="exampleInputLemail1">Lead Lname</label>
+          <input type="text" class="form-control"  aria-describedby="LemailHelp" [(ngModel)]="LLname" [ngModelOptions]="{standalone: true}" placeholder="Enter plan here">
+          </div>
+    
+          <div class="form-group">
+          <label for="exampleInputLemail1">Laddress</label>
+          <input type="text" class="form-control"  aria-describedby="LemailHelp" [(ngModel)]="LLaddress" [ngModelOptions]="{standalone: true}" placeholder="Enter plan price here">
+          </div>
+    
+            <div class="form-group">
+            <label for="exampleInputLemail1">Lphone</label>
+            <input type="text" class="form-control"  aria-describedby="LemailHelp" [(ngModel)]="LLphone" [ngModelOptions]="{standalone: true}"[ngModelOptions]="{standalone: true}" placeholder="Enter description here">
+            </div>
+    
+            <div class="form-group">
+            <label for="exampleInputLemail1">Lemail</label>
+            <input type="Lemail" class="form-control"  aria-describedby="LemailHelp" [(ngModel)]="LLemail" [ngModelOptions]="{standalone: true}" placeholder="Enter plan validity here">
+            </div>
+    
+            <div class="form-group">
+              <label for="exampleInputLemail1">Gender</label>
+              <input type="text" class="form-control"  aria-describedby="LemailHelp" [(ngModel)]="Lgender" [ngModelOptions]="{standalone: true}" placeholder="Enter plan validity here">
+              </div>
+      
+    
+    <button type="submit" (click)="addLead()" *ngIf="lead.Lid==0" class="btn btn-success">Add</button>
+    
+    <button type="submit" (click)="updateLead()" *ngIf="lead.Lid!==0" class="btn btn-success">Update</button>
+    </form>
+    
+-->
